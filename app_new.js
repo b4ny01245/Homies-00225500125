@@ -2,38 +2,6 @@
 /* MY HOMIES - APP (Firebase) */
 /* Vanilla JavaScript ES6+   */
 /* ======================== */
-
-import { initializeApp }   from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-import { getStorage, ref as storageRef, uploadBytes, getDownloadURL }
-    from "https://www.gstatic.com/firebasejs/10.12.0/firebase-storage.js";
-/*import { getAuth, GoogleAuthProvider, signInWithRedirect, getRedirectResult, signOut, onAuthStateChanged }
-    from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";*/
-import { getAuth, GoogleAuthProvider, signInWithPopup, signOut, onAuthStateChanged} 
-    from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
-import {
-    getFirestore, collection, doc, setDoc, getDoc, updateDoc, deleteDoc,
-    onSnapshot, addDoc, serverTimestamp, query, orderBy, where,
-    getDocs, writeBatch, increment
-} from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
-
-// ========================
-// FIREBASE CONFIG
-// ========================
-const firebaseConfig = {
-    apiKey:            "AIzaSyDVFcsya3GrA75tzTdEk7sQoq69Jt0ee8M",
-    authDomain:        "my-homies.firebaseapp.com",
-    projectId:         "my-homies",
-    storageBucket:     "my-homies.firebasestorage.app",
-    messagingSenderId: "1072152282603",
-    appId:             "1:1072152282603:web:29d91ce0b6e75ce75cc5ae",
-    measurementId:     "G-0CB0Y4GVDR"
-};
-
-const firebaseApp = initializeApp(firebaseConfig);
-const auth        = getAuth(firebaseApp);
-const db          = getFirestore(firebaseApp);
-const storage     = getStorage(firebaseApp);
-
 // ========================
 // MISSION CONFIG
 // ========================
