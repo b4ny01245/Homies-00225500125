@@ -6,7 +6,9 @@
 import { initializeApp }   from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
 import { getStorage, ref as storageRef, uploadBytes, getDownloadURL }
     from "https://www.gstatic.com/firebasejs/10.12.0/firebase-storage.js";
-import { getAuth, GoogleAuthProvider, signInWithRedirect, getRedirectResult, signOut, onAuthStateChanged }
+/*import { getAuth, GoogleAuthProvider, signInWithRedirect, getRedirectResult, signOut, onAuthStateChanged }
+    from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";*/
+import { getAuth, GoogleAuthProvider, signInWithPopup, signOut, onAuthStateChanged} 
     from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
 import {
     getFirestore, collection, doc, setDoc, getDoc, updateDoc, deleteDoc,
@@ -97,13 +99,13 @@ document.addEventListener('DOMContentLoaded', () => {
 // ========================
 // AUTH
 // ========================
-getRedirectResult(auth).catch(err => {
+/*getRedirectResult(auth).catch(err => {
     if (err && err.code !== 'auth/cancelled-popup-request')
         console.error('❌ Redirect error:', err.message);
-});
+});*/
 
 googleSignInBtn.addEventListener('click', async () => {
-    try { await signInWithRedirect(auth, new GoogleAuthProvider()); }
+    try { await signInWithPopup(auth, new GoogleAuthProvider()); }
     catch (err) { alert('Login failed: ' + err.message); }
 });
 
